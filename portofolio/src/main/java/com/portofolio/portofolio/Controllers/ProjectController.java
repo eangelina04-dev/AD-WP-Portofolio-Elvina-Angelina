@@ -21,7 +21,7 @@ public class ProjectController {
     public String tampilkanProjects(Model model) {
         model.addAttribute("daftarProject", projectRepository.findAll());
         model.addAttribute("projectBaru", new Project()); 
-        return "HTML/projects"; // Mencari file di templates/HTML/projects.html
+        return "HTML/projects"; 
     }
 
     @PostMapping("/projects/add")
@@ -32,7 +32,6 @@ public class ProjectController {
 
     @GetMapping("/projects/edit/{id}")
     public String tampilkanFormEdit(@PathVariable Long id, Model model) {
-        // Cari project di database berdasarkan ID
         Project projectLama = projectRepository.findById(id)
             .orElseThrow(() -> new IllegalArgumentException("Project tidak ditemukan dengan ID: " + id));
         
@@ -42,16 +41,15 @@ public class ProjectController {
 
     @PostMapping("/projects/edit/{id}")
     public String updateProject(@PathVariable Long id, @ModelAttribute("project") Project project) {
-        // Wajib set ID agar Spring Boot tahu ini data lama yang mau ditimpa (di-update)
         project.setId(id);
         projectRepository.save(project);
         
-        return "redirect:/projects"; // Kembali ke halaman projects
+        return "redirect:/projects"; 
     }
 
     @GetMapping({"/", "/index", "/index.html"})
     public String tampilkanHome() {
-        return "HTML/index"; // Mencari file templates/HTML/index.html
+        return "HTML/index"; 
     }
 
     @GetMapping({"/about", "/about.html"})

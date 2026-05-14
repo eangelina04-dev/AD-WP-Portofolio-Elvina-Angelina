@@ -28,5 +28,24 @@
 
 .bg-accent {
     background-color: var(--accent-color);
-    color: #000;
+    color: #000000;
+}
+
+.form-label{
+    font-weight: 600;
+    letter-spacing: 1px;
+    color:#bd9c9c;
+}
+
+.form-control {
+    background-color: #121212;
+    color: #ffffff;
+    border: 1px solid #ffffff0d;
+}
+
+.form-control:focus {
+    background-color: #121212; 
+    color: #ffffff; 
+    border-color: #bd9c9c;
+    box-shadow: 0 0 0 0.25rem #bd9c9c40; 
 }

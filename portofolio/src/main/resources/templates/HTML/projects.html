@@ -41,7 +41,7 @@
             Here are some of the projects I've worked on, ranging from application and web development to UI/UX design.
         </p>
         
-        <button class="btn btn-warning mb-5 fw-bold" data-bs-toggle="modal" data-bs-target="#addProjectModal">
+        <button class="btn btn-custom mb-5" data-bs-toggle="modal" data-bs-target="#addProjectModal">
             <i class="bi bi-plus-circle"></i> Add New Project (Admin)
         </button>
     </div>
@@ -62,17 +62,18 @@
                         </p>
                         
                         <div class="d-flex flex-wrap gap-2">
-                            <a th:href="@{/projects/edit/{id}(id=${project.id})}" class="btn btn-outline-warning btn-sm">
-                                <i class="bi bi-pencil-square"></i> Edit
+                            <a th:href="@{/projects/edit/{id}(id=${project.id})}" class="btn btn-custom btn-sm d-inline-flex align-items-center justify-content-center">
+                                <i class="bi bi-pencil-square me-1"></i> Edit
                             </a>
+
                             <a th:if="${project.githubUrl != null and !project.githubUrl.isEmpty()}" 
-                               th:href="${project.githubUrl}" target="_blank" class="btn btn-custom btn-sm">
-                                <i class="bi bi-github"></i> GitHub
+                               th:href="${project.githubUrl}" target="_blank" class="btn btn-custom btn-sm d-inline-flex align-items-center justify-content-center">
+                                <i class="bi bi-github me-1"></i> GitHub
                             </a>
                             
                             <a th:if="${project.figmaUrl != null and !project.figmaUrl.isEmpty()}" 
-                               th:href="${project.figmaUrl}" target="_blank" class="btn btn-custom btn-sm">
-                                <i class="fa-brands fa-figma"></i> Figma
+                               th:href="${project.figmaUrl}" target="_blank" class="btn btn-custom btn-sm d-inline-flex align-items-center justify-content-center">
+                                <i class="fa-brands fa-figma me-1"></i> Figma
                             </a>
                         </div>
                     </div>
@@ -89,7 +90,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content bg-dark text-white border-secondary">
                 <div class="modal-header border-secondary">
-                    <h5 class="modal-title text-warning fw-bold" id="addProjectModalLabel">Add Project <span class="badge bg-secondary ms-2">NEW</span></h5>
+                    <h5 class="modal-title text-accent fw-bold" id="addProjectModalLabel">Add Project <span class="badge bg-secondary ms-2">NEW</span></h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form th:action="@{/projects/add}" th:object="${projectBaru}" method="POST">
@@ -122,8 +123,8 @@
                         </div>
                     </div>
                     <div class="modal-footer border-secondary">
-                        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-warning">Save Project</button>
+                        <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-custom">Save Project</button>
                     </div>
                 </form>
             </div>
