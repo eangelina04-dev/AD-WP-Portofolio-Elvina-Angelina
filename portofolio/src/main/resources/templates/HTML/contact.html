@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/contact.css}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" th:href="@{/}">
+                <span class="text-accent">&lt;/&gt;</span> Port<span class="text-accent">folio</span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/about}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/projects}">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/skills}">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/gallery}">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" th:href="@{/contact}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5 pb-5">
+        
+        <div id="formAlert" class="alert d-none alert-dismissible fade show mt-4" role="alert">
+            <span id="alertMessage"></span>
+            <button type="button" class="btn-close" aria-label="Close" onclick="closeAlert()"></button>
+        </div>
+
+        <h1 class="display-4 fw-bold mb-5 mt-4 reveal">Let's collaborate<span class="text-accent">.</span></h1>
+
+        <div class="row gy-5">
+            
+            <div class="col-lg-7 reveal pe-lg-5">
+                <form id="contactForm" onsubmit="return validateForm(event)">
+                    
+                    <div class="mb-4">
+                        <label for="nameInput" class="form-label text-secondary small text-uppercase">What's your name?</label>
+                        <input type="text" class="form-control custom-input" id="nameInput" placeholder="Enter your name">
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="emailInput" class="form-label text-secondary small text-uppercase">Your email address</label>
+                        <input type="email" class="form-control custom-input" id="emailInput" placeholder="Enter your email">
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="messageInput" class="form-label text-secondary small text-uppercase">Tell me about your project...</label>
+                        <textarea class="form-control custom-input" id="messageInput" rows="5" placeholder="Write your message here"></textarea>
+                        <div class="invalid-feedback">Message cannot be empty.</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-custom px-5 py-3 text-uppercase fs-6">Send Message</button>
+                </form>
+            </div>
+
+            <div class="col-lg-4 offset-lg-1 reveal mt-lg-5 pt-lg-2">
+                <div class="mb-5">
+                    <h6 class="text-secondary text-uppercase mb-3 small fw-bold">Direct Contact</h6>
+                    <a th:href="@{mailto:angelinaelvina1@gmail.com}" class="text-white text-decoration-none fs-5 contact-link d-block mb-2">
+                        angelinaelvina1@gmail.com </a>
+                    <a th:href="@{https://wa.me/6289507333708}" target="_blank" class="text-white text-decoration-none fs-5 contact-link d-block">
+                        +62-895-0733-3708</a>
+                </div>
+
+                <div class="mb-5">
+                <h6 class="text-secondary text-uppercase mb-3 small fw-bold">Socials</h6>
+                <div class="social-icons d-flex gap-3">
+                    <a th:href="@{https://github.com/eangelina04-dev}" target="_blank"><i class="bi bi-github"></i></a>
+                    <a th:href="@{https://www.linkedin.com/in/elvina-angelina-1476b0321/}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    <a th:href="@{https://www.instagram.com/_elvinangelinaa/}" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer py-5 mt-5">
+        <div class="container border-top border-dark pt-5">
+            <div class="row gy-4">
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-code-slash text-accent"></i> Port<span class="text-accent">folio</span></h5>
+                    <p class="text-secondary pe-md-4">A simple space to express who I am.</p>
+                </div>
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a th:href="@{/skills}">Skills</a></li>
+                        <li><a th:href="@{/gallery}">Gallery</a></li>
+                        <li><a th:href="@{/about}">About</a></li>
+                        <li><a th:href="@{/projects}">Projects</a></li>
+                        <li><a th:href="@{/contact}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3">Connect</h5>
+                    <div class="social-icons d-flex gap-3 mt-3">
+                        <a th:href="@{https://github.com/eangelina04-dev}" target="_blank"><i class="bi bi-github"></i></a>
+                        <a th:href="@{https://www.linkedin.com/in/elvina-angelina-1476b0321/}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a th:href="@{https://www.instagram.com/_elvinangelinaa/}" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/contact.js}"></script>
+</body>
+</html>

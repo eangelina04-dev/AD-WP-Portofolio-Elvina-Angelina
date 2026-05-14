@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" th:href="@{/}">
+                <span class="text-accent">&lt;/&gt;</span> Port<span class="text-accent">folio</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link active" th:href="@{/}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/about}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/projects}">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/skills}">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/gallery}">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero">
+    <div class="container text-center reveal">
+        <div class="profile-wrapper mb-4">
+            <img th:src="@{/images/photo profile.jpg}" alt="Foto Profil" class="profile-img shadow-lg">
+        </div>
+        <h1 class="display-3 fw-bold name mb-3">
+            Elvina<span class="text-accent">.</span>
+        </h1>
+        <p class="lead tagline mx-auto mb-5" style="max-width: 600px;">
+            Full-stack Developer. 
+            I build ideas from <span class="text-accent fw-bold">nothing</span> into something meaningful.
+        </p>
+        <a th:href="@{/projects}" class="btn btn-custom btn-lg">View Projects</a>
+    </div>
+    </header>
+
+    <section id="about" class="section">
+    <div class="container text-center">
+        <h2 class="reveal">About Me</h2>
+        <p class="intro-text mx-auto reveal" style="max-width: 800px;">
+            I am an Informatics student who is passionate about exploring ideas, building new concepts, and to continuously learn the world of programming.
+            Every project is a step forward in shaping creativity, logic, and problem-solving skills.
+        </p>
+        
+    </div>
+    </section>
+
+    <footer class="footer py-5 mt-5">
+        <div class="container border-top border-dark pt-5">
+            <div class="row gy-4">
+                
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-code-slash text-accent"></i> Port<span class="text-accent">folio</span>
+                    </h5>
+                    <p class="text-secondary pe-md-4">
+                        A simple space to express who I am.
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="mb-2"><a th:href="@{/skills}">Skills</a></li>
+                        <li class="mb-2"><a th:href="@{/gallery}">Gallery</a></li>
+                        <li class="mb-2"><a th:href="@{/about}">About</a></li>
+                        <li class="mb-2"><a th:href="@{/projects}">Projects</a></li>
+                        <li class="mb-2"><a th:href="@{/contact}">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3">Connect With Me</h5>
+                    <div class="social-icons d-flex gap-3 mt-3">
+                        <a th:href="@{https://github.com/eangelina04-dev}" target="_blank"><i class="bi bi-github"></i></a>
+                        <a th:href="@{https://www.linkedin.com/in/elvina-angelina-1476b0321/}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a th:href="@{https://www.instagram.com/_elvinangelinaa/}" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script th:src="@{/js/index.js}"></script>
+</body>
+</html>

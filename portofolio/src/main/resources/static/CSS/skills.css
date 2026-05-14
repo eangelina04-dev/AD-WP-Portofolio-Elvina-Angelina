@@ -1,0 +1,62 @@
+.skills-card {
+    background-color: #121212 !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.skills-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(244, 194, 194, 0.05) !important;
+}
+
+.custom-progress {
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.custom-progress-bar {
+    background-color: var(--accent-color);
+    border-radius: 50px;
+    width: 0; 
+    transition: width 1.5s cubic-bezier(0.1, 0.5, 0.2, 1); 
+}
+
+.tool-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(244, 194, 194, 0.2);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tool-box i {
+    margin-right: 5px;
+    color: var(--accent-color);
+}
+
+.tool-box:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+.tool-box:hover i {
+    color: #000;
+}
+
+.soft-skills-list li {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.soft-skills-list li strong {
+    color: var(--text-primary);
+}

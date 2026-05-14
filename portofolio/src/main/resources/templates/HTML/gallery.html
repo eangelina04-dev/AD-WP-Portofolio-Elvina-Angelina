@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/gallery.css}">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" th:href="@{/}">
+                <span class="text-accent">&lt;/&gt;</span> Port<span class="text-accent">folio</span>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/about}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/projects}">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/skills}">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link active" th:href="@{/gallery}">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5 text-center">
+        <h1 class="display-4 fw-bold mt-4 reveal">My <span class="text-accent">Gallery</span></h1>
+        <p class="text-secondary lead mx-auto reveal mb-5" style="max-width: 600px;">
+            A visual journey of my projects, and unforgettable moments.
+        </p>
+    </div>
+
+    <section class="container mb-5 pb-5">
+        <div class="row g-4 reveal">
+            
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/1.jpg')">
+                        <img th:src="@{/images/1.jpg}" alt="NPLC" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">NPLC Competition</h5>
+                        <p class="text-secondary small mb-0">National Programming Logic Competition experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/2.jpg')">
+                        <img th:src="@{/images/2.jpg}" alt="NPLC" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">Algorithm Team</h5>
+                        <p class="text-secondary small mb-0">Collaborating to save the timeline.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/3.jpg')">
+                        <img th:src="@{/images/3.jpg}" alt="Entrance" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">ENTRANCE 4.0</h5>
+                        <p class="text-secondary small mb-0">The first meeting of the EVENTRACE 4.0 committee.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/4.jpg')">
+                        <img th:src="@{/images/4.jpg}" alt="Entrance" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">Committee Meeting</h5>
+                        <p class="text-secondary small mb-0">Briefing photo session for event committee.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/5.jpg')">
+                        <img th:src="@{/images/5.jpg}" alt="RHD" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">Rescue & Health Division</h5>
+                        <p class="text-secondary small mb-0">Serving in the health division for O-WEEK.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/6.jpg')">
+                        <img th:src="@{/images/6.jpg}" alt="Internship" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">Zion Internship</h5>
+                        <p class="text-secondary small mb-0">Library management and administration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/7.jpg')">
+                        <img th:src="@{/images/7.jpg}" alt="Internship" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">Admin Days</h5>
+                        <p class="text-secondary small mb-0">School administration internship experience.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/8.jpg')">
+                        <img th:src="@{/images/8.jpg}" alt="Social" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">Social Service</h5>
+                        <p class="text-secondary small mb-0">Charity event at Titipan Kasih Orphanage.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/9.jpg')">
+                        <img th:src="@{/images/9.jpg}" alt="Social" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">Giving Back</h5>
+                        <p class="text-secondary small mb-0">Distributing goods to those in need.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/10.jpg')">
+                        <img th:src="@{/images/10.jpg}" alt="Research" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">OPSI Research</h5>
+                        <p class="text-secondary small mb-0">Scientific research for student olympiad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/11.jpg')">
+                        <img th:src="@{/images/11.jpg}" alt="Research" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">Data Science</h5>
+                        <p class="text-secondary small mb-0">Analyzing data for academic purposes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card gallery-card h-100 shadow-lg gallery-box">
+                    <div class="gallery-img-wrapper position-relative" data-bs-toggle="modal" data-bs-target="#galleryModal" onclick="showModalImage('../images/12.jpg')">
+                        <img th:src="@{/images/12.jpg}" alt="BEM" class="w-100 gallery-img">
+                        <div class="gallery-overlay"><i class="bi bi-zoom-in fs-1 text-white"></i></div>
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold text-accent mb-2">ISU Organization</h5>
+                        <p class="text-secondary small mb-0">Student Union meeting and collaboration.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pt-0">
+                    <img th:src="@{/images/placeholder.jpg}" id="modalImage" class="img-fluid rounded shadow-lg" alt="Full Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer py-5 mt-5">
+        <div class="container border-top border-dark pt-5">
+            <div class="row gy-4">
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-code-slash text-accent"></i> Port<span class="text-accent">folio</span></h5>
+                    <p class="text-secondary pe-md-4">A simple space to express who I am.</p>
+                </div>
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a th:href="@{/skills}">Skills</a></li>
+                        <li><a th:href="@{/gallery}">Gallery</a></li>
+                        <li><a th:href="@{/about}">About</a></li>
+                        <li><a th:href="@{/projects}">Projects</a></li>
+                        <li><a th:href="@{/contact}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-4 text-start">
+                    <h5 class="fw-bold mb-3">Connect</h5>
+                    <div class="social-icons d-flex gap-3 mt-3">
+                        <a th:href="@{https://github.com/eangelina04-dev}" target="_blank"><i class="bi bi-github"></i></a>
+                        <a th:href="@{https://www.linkedin.com/in/elvina-angelina-1476b0321/}" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a th:href="@{https://www.instagram.com/_elvinangelinaa/}" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/gallery.js}"></script>
+</body>
+</html>

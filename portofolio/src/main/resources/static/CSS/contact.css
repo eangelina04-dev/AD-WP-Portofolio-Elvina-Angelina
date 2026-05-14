@@ -1,0 +1,31 @@
+.custom-input {
+    background-color: transparent !important; 
+    border: 1px solid #333 !important; 
+    color: var(--text-primary) !important;
+    border-radius: 0; 
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: var(--accent-color) !important; 
+    box-shadow: none !important; 
+    outline: none;
+}
+
+.custom-input::placeholder {
+    color: #555;
+}
+
+.contact-link {
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.custom-input.is-invalid {
+    background-image: none !important;
+    padding-right: 15px !important; 
+}
